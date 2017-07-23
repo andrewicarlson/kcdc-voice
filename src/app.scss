@@ -1,0 +1,136 @@
+$base-font-size: 16;
+
+html {
+  font-size: $base-font-size;
+}
+
+@function pxToRem($px) {
+
+  @return $px/$base-font-size+rem;
+}
+
+body {
+  background-color: #00B9F1;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+
+.vml-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #fff;
+  margin: pxToRem(75) 0;
+}
+
+.vml-logo--vml {
+  min-width: pxToRem(350);
+}
+
+.vml-logo--kcdc {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: pxToRem(100);
+  margin-right: pxToRem(60);
+
+  &:after {
+    display: inline-block;
+    content: '+';
+    margin-left: pxToRem(60);
+  }
+}
+
+.vml-container {
+  max-width: 60%;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.vml-container--sm {
+  width: 40%;
+}
+
+.vml-section-title {
+  position: relative;
+
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: pxToRem(2);
+    position: absolute;
+    top: calc(50%);
+    left: 0;
+    background-color: #fff;
+    z-index: 0;
+  }
+}
+
+.vml-section-title__inner {
+  background-color: #00B9F1;
+  padding-right: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+.vml-flex-row {
+  display: flex;
+}
+
+.vml-flex-item {
+  flex: 1;
+}
+
+.vml-speaker__image {
+  max-width: 100%;
+}
+
+.vml-card {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 300px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  color: #000;
+  padding: pxToRem(16);
+}
+
+.vml-card-row {
+  justify-content: space-between;
+}
+
+.vml-list-item__author-image {
+  background-position: center;
+  background-size: cover;
+  flex-basis: 15%;
+}
+
+.vml-list-item__content {
+  flex: 1;
+  padding: 1rem 1rem 1rem 2rem;
+}
+
+.vml-list-item {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    box-shadow: 0 1px 3px rgba(0,0,0, 0.12), 0 1px 2px rgba(0,0,0, 0.24);
+    margin-bottom: 1rem;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+}
+
+.vml-list-item__title {
+  font-weight: 300;
+}
+
+.vml-list-item__meta {
+  color: #999;
+  font-weight: bold;
+}
