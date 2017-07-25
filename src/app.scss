@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: #00B9F1;
+  background-color: #3aaadf;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   color: #fff;
@@ -21,17 +21,17 @@ body {
   justify-content: center;
   align-items: center;
   fill: #fff;
-  margin: pxToRem(75) 0;
+  margin: pxToRem(50) 0;
 }
 
 .vml-logo--vml {
-  min-width: pxToRem(350);
+  min-width: pxToRem(250);
 }
 
 .vml-logo--kcdc {
   font-family: 'Montserrat';
   font-weight: 700;
-  font-size: pxToRem(100);
+  font-size: pxToRem(75);
   margin-right: pxToRem(60);
 
   &:after {
@@ -43,8 +43,11 @@ body {
 
 .vml-container {
   max-width: 60%;
-  width: 95%;
   margin: 0 auto;
+}
+
+.vml-container--wide {
+  max-width: 80%;
 }
 
 .vml-container--sm {
@@ -53,7 +56,7 @@ body {
 
 .vml-section-title {
   position: relative;
-
+  text-transform: uppercase;
 
   &:after {
     content: '';
@@ -68,7 +71,7 @@ body {
 }
 
 .vml-section-title__inner {
-  background-color: #00B9F1;
+  background-color: #3aaadf;
   padding-right: 2rem;
   z-index: 10;
   position: relative;
@@ -86,51 +89,53 @@ body {
   max-width: 100%;
 }
 
-.vml-card {
-  background: #fff;
-  border-radius: 2px;
-  display: inline-block;
-  height: 300px;
-  margin: 1rem;
-  position: relative;
-  width: 300px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  color: #000;
-  padding: pxToRem(16);
-}
-
 .vml-card-row {
   justify-content: space-between;
 }
 
-.vml-list-item__author-image {
+.vml-grid-item__author-image {
   background-position: center;
   background-size: cover;
   flex-basis: 15%;
 }
 
-.vml-list-item__content {
+.vml-grid-item__content {
   flex: 1;
   padding: 1rem 1rem 1rem 2rem;
 }
 
-.vml-list-item {
+.vml-grid-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.vml-grid-item {
     background-color: #fff;
     color: #000;
     display: flex;
     box-shadow: 0 1px 3px rgba(0,0,0, 0.12), 0 1px 2px rgba(0,0,0, 0.24);
     margin-bottom: 1rem;
+    flex: 1 calc(20% - 1rem);
 
     &:last-child {
       border-bottom: 0;
     }
 }
 
-.vml-list-item__title {
+.vml-grid-item__title {
   font-weight: 300;
 }
 
-.vml-list-item__meta {
+.vml-grid-item__meta {
   color: #999;
   font-weight: bold;
+}
+
+.vml-error {
+  font-weight: 400;
+}
+
+.vml-grid-row .vml-grid-item {
+  margin-bottom: 0;
 }

@@ -7,7 +7,7 @@
     <default-view v-if="showDefault"></default-view>
     <error-view v-if="showError" :message="message"></error-view>
     <list-view v-if="showList" :title="title" :items="items"></list-view>
-    <single-view v-if="showSingle" :title="title" :items="items"></single-view>
+    <single-view v-if="showSingle" :speaker="speaker" :title="title" :items="items"></single-view>
   </div>
 </template>
 
@@ -35,6 +35,7 @@ export default {
       title: '',
       type: '',
       items: [],
+      speaker: {},
     };
   },
   created() {
@@ -70,6 +71,7 @@ export default {
       this.$data.showDefault = false;
       this.$data.title = data.title;
       this.$data.items = data.items;
+      this.$data.speaker = data.speaker;
       restartInterval();
     };
 

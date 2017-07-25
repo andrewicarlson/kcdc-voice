@@ -1,7 +1,7 @@
 <template>
-  <div class="vml-error">
+  <div>
     <div class="vml-container vml-container--sm">
-      <h1>{{ message }}</h1>
+      <h1 class="vml-error">{{ message }}</h1>
     </div>
   </div>
 </template>

@@ -1,16 +1,27 @@
 <template>
-  <div class="vml-list">
+  <div class="vml-grid">
     <div class="vml-container">
       <h1 class="vml-section-title">
-        <span class="vml-section-title__inner"> {{ title }}</span>
+        <span class="vml-section-title__inner">#&nbsp;&nbsp;{{ title }}</span>
       </h1>
-      <section class="vml-list-row">
-        <div class="vml-list-item" v-for="item in items">
-          <div class="vml-list-item__author-image" :style="{ backgroundImage: 'url(' + item.thumbnail + ')' }"></div>
-          <div class="vml-list-item__content">
-            <div v-if="item.time || item.speaker" class="vml-list-item__meta">{{ item.speaker }} | {{ item.time }} | {{ item.location }}</div>
-            <h2 class="vml-list-item__title">{{ item.title }}</h2>
-            <div class="vml-list-item__description">{{ item.description }}</div>
+      <section class="vml-speaker-row" v-if="speaker">
+        <div class="vml-grid-item">
+          <div class="vml-grid-item__author-image" :style="{ backgroundImage: 'url(' + speaker.thumbnail + ')' }"></div>
+          <div class="vml-grid-item__content">
+            <h2 class="vml-grid-item__title">{{ speaker.title }}</h2>
+            <div class="vml-grid-item__description">{{ speaker.description }}</div>
+          </div>
+        </div>
+      </section>
+      <section class="vml-grid-row">
+        <div class="vml-grid-item" v-for="item in items">
+          <div v-if="!speaker" class="vml-grid-item__author-image" :style="{ backgroundImage: 'url(' + item.thumbnail + ')' }"></div>
+          <div class="vml-grid-item__content">
+            <div v-if="!speaker" class="vml-grid-item__meta">//&nbsp;&nbsp;{{ item.speaker }}</div>
+            <div class="vml-grid-item__meta">//&nbsp;&nbsp;{{ item.location }}</div>
+            <div class="vml-grid-item__meta">//&nbsp;&nbsp;{{ item.time }}</div>
+            <h2 class="vml-grid-item__title">{{ item.title }}</h2>
+            <div class="vml-grid-item__description">{{ item.description }}</div>
           </div>
         </div>
       </section>
@@ -21,6 +32,6 @@
 <script>
 export default {
   name: 'single-view',
-  props: ['title', 'items'],
+  props: ['title', 'items', 'speaker'],
 };
 </script>

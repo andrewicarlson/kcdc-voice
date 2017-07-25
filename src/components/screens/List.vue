@@ -1,15 +1,16 @@
 <template>
-  <div class="vml-list">
-    <div class="vml-container">
+  <div class="vml-grid">
+    <div class="vml-container vml-container--wide">
       <h1 class="vml-section-title">
-        <span class="vml-section-title__inner"> {{ title }}</span>
+        <span class="vml-section-title__inner">#&nbsp;&nbsp;{{ title }}</span>
       </h1>
-      <section class="vml-list-row">
-        <div class="vml-list-item" v-for="item in items">
-          <div class="vml-list-item__author-image" :style="{ backgroundImage: 'url(' + item.thumbnail + ')' }"></div>
-          <div class="vml-list-item__content">
-            <div class="vml-list-item__meta">{{ item.speaker }} | {{ item.time }} | {{ item.location }}</div>
-            <h2 class="vml-list-item__title">{{ item.title }}</h2>
+      <section class="vml-grid-row">
+        <div class="vml-grid-item" v-for="item in items">
+          <div class="vml-grid-item__content">
+            <div class="vml-grid-item__meta">//&nbsp;&nbsp;{{ item.speaker }}</div>
+            <div class="vml-grid-item__meta">//&nbsp;&nbsp;{{ item.location }}</div>
+            <div class="vml-grid-item__meta">//&nbsp;&nbsp;{{ item.time }}</div>
+            <h2 class="vml-grid-item__title">{{ item.title }}</h2>
           </div>
         </div>
       </section>
