@@ -3,6 +3,7 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -83,6 +84,12 @@ module.exports = {
     ]
   },
   plugins: [
-    extractSass
+    extractSass,
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jquery: 'jquery',
+      'window.jQuery': 'jquery',
+      jQuery: 'jquery'
+    })
   ]
 }
